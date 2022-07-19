@@ -110,6 +110,7 @@ document.querySelector(".btn-cheese").onclick = function ()
 
 
 // Trial 2 - Setup event listener for the tomatoes button
+
 document.querySelector(".btn-tomatoes").onclick = function () 
 {
   state.Tomatoes = !state.Tomatoes;
@@ -117,6 +118,7 @@ document.querySelector(".btn-tomatoes").onclick = function ()
 };
 
 // Trial 2 - Setup event listener for the onion button
+
 document.querySelector(".btn-onions").onclick = function () 
 {
   state.Onions = !state.Onions;
@@ -125,6 +127,7 @@ document.querySelector(".btn-onions").onclick = function ()
 
 
 // Trial 2 - Setup event listener for the lettuce button
+
 document.querySelector(".btn-lettuce").onclick = function () 
 {
   state.Lettuce = !state.Lettuce;
@@ -133,100 +136,74 @@ document.querySelector(".btn-lettuce").onclick = function ()
 
 
 //Challenge 1 - Add/Remove the class active to the buttons based on state
+
 function renderButtons()
 {
-  if(state.Patty)
-  {
+  if(state.Patty){
     document.querySelector(".btn-patty").classList.add("active"); 
   }
-  else
-  {
+  else{
     document.querySelector(".btn-patty").classList.remove("active");
   }
-
-  if(state.Tomatoes)
-  {
+  if(state.Tomatoes){
     document.querySelector(".btn-tomatoes").classList.add("active"); 
   }
-  else
-  {
+  else{
     document.querySelector(".btn-tomatoes").classList.remove("active"); 
   }
-
-  if(state.Cheese)
-  {
+  if(state.Cheese){
     document.querySelector(".btn-cheese").classList.add("active"); 
   }
-  else
-  {
+  else{
     document.querySelector(".btn-cheese").classList.remove("active");
   }
-
-  if(state.Onions)
-  {
+  if(state.Onions){
     document.querySelector(".btn-onions").classList.add("active");
   }
-  else
-  {
+  else{
     document.querySelector(".btn-onions").classList.remove("active"); 
   }
-
-  if(state.Lettuce)
-  {
+  if(state.Lettuce){
     document.querySelector(".btn-lettuce").classList.add("active"); 
   }
-  else
-  {
+  else{
     document.querySelector(".btn-lettuce").classList.remove("active"); 
   }
 }
 
 
 //Challenge 2 - Render only the items selected in the ingredients board based on the state
+
 function renderIngredientsBoard()
 {
-  if(!state.Patty)
-  {
+  if(!state.Patty){
     document.getElementsByClassName("items")[0].innerHTML = " ";
   }
-  else
-  {
+  else{
     document.getElementsByClassName("items")[0].innerHTML = "Patty";
   }
-
-  if(!state.Cheese)
-  {
+  if(!state.Cheese){
     document.getElementsByClassName("items")[1].innerHTML = " ";
   }
-  else
-  {
+  else{
     document.getElementsByClassName("items")[1].innerHTML = "Cheese";
   }
-
-  if(!state.Tomatoes)
-  {
+  if(!state.Tomatoes){
     document.getElementsByClassName("items")[2].innerHTML = " ";
   }
-  else
-  {
+  else{
     document.getElementsByClassName("items")[2].innerHTML = "Tomatoes";
   }
-
-  if(!state.Onions)
-  {
+  if(!state.Onions){
     document.getElementsByClassName("items")[3].innerHTML = " ";
   }
-  else
-  {
+  else{
     document.getElementsByClassName("items")[3].innerHTML = "Onions";
   }
-
-  if(!state.Lettuce)
-  {
+  if(!state.Lettuce){
     document.getElementsByClassName("items")[4].innerHTML = " ";
   }
-  else
-  {
+  else{
     document.getElementsByClassName("items")[4].innerHTML = "Lettuce";
   }
 } 
@@ -235,27 +212,23 @@ function renderIngredientsBoard()
 //Judgement 1
 //In the p element having price-details as the class, display the calculated
 //price based on ingredients
+
 function renderPrice()
 {
   let price = 20
-  if(state.Patty)
-  {
+  if(state.Patty){
     price = ingredients.Patty + price;
   }
-  if(state.Cheese)
-  {
+  if(state.Cheese){
     price = ingredients.Cheese+ price;
   }
-  if(state.Tomatoes)
-  {
+  if(state.Tomatoes){
     price += ingredients.Tomatoes;
   }
-  if(state.Onions)
-  {
+  if(state.Onions){
     price+= ingredients.Onions;
   }
-  if(state.Lettuce)
-  {
+  if(state.Lettuce){
     price += ingredients.Lettuce;
   }
   document.querySelector(".price-details").innerHTML = "INR "+price
